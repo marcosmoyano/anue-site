@@ -80,6 +80,17 @@
                 dataType: 'json',
                 beforeSubmit: opts.beforeSubmit,
                 success: opts.success
+            }).ajaxError(function(){
+                $.unblockUI();
+                var message = ['<h3 style="text-align: left; margin: 10px">',
+                               'An error ocurred</h3>',
+                               '<p>Please try again later</p>']
+                $.blockUI(
+                    $.extend(
+                        options.notifyOptions,
+                        {message: message.join("")}
+                    )
+                );
             });
         });
     };
