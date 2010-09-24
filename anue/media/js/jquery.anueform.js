@@ -1,9 +1,26 @@
 ;(function($) {
     var options = {
         notifyOptions: {
-	    sticky: false,
-	    class_name: 'form-messages',
-   	    time: 3000
+	    css: {
+		width: '350px',
+		top: '10px',
+		left: '',
+		right: '10px',
+		border: 'none',
+		padding: '5px',
+		opacity: 0.6,
+		cursor: 'default',
+		color: '#fff',
+		backgroundColor: '#000',
+		'-webkit-border-radius': '10px',
+		'-moz-border-radius': '10px',
+		'border-radius': '10px'
+	    },
+	    fadeIn: 700,
+            fadeOut: 1000,
+            centerY: false,
+	    timeout: 3000,
+            showOverlay: false
         },
         blockUIOptions: {
             baseZ: 99999,
@@ -23,31 +40,30 @@
             $.unblockUI();
             $('.floating-message').click();
             if (data.success) {
-                $.fn.colorbox.close();
                 $.gritter.add($.extend(
                     options.notifyOptions,
                     {title: 'Form sent', text: ' '}
                 ));
                 form.resetForm();
             } else {
-                if ($('#cboxOverlay:visible').length == 0) {
-                    $.colorbox({href:"about:blank"});
-                }
-                var errors, title, message;
+                var errors, message = [];
                 for (field in data['errors']) {
                     errors = data['errors'][field];
-                    title = ['<h3>', field, '</h3>'];
-                    message = [];
+                    message.push('<h3 style="text-align: left; margin: 10px">');
+                    message.push(field);
+                    message.push(':</h3>');
                     for (var i=0; i < errors.length; i++) {
                         message.push('<p>');
                         message.push(errors[i]);
                         message.push('</p>');
                     }
-                    $.gritter.add($.extend(
-                        options.notifyOptions,
-                        {title: title.join(""), text: message.join("")}
-                    ));
                 }
+                $.blockUI(
+                    $.extend(
+                        options.notifyOptions,
+                        {message: message.join("")}
+                    )
+                );
             }
         }
     };
