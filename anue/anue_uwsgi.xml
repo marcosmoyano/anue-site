@@ -1,0 +1,12 @@
+<uwsgi>
+  <harakiri>10</harakiri>
+  <processes>1</processes>
+  <pythonpath>/home/fabian/.virtualenvs/anue/anue/</pythonpath>
+  <pythonpath>/home/fabian/.virtualenvs/anue/</pythonpath>
+  <app mountpoint="/">
+    <script>anue_uwsgi</script>
+  </app>
+  <daemonize>/var/log/uwsgi.log</daemonize>
+  <master/>
+  <chmod-socket/>
+</uwsgi>
