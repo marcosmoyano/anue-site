@@ -19,7 +19,7 @@
 	    fadeIn: 700,
             fadeOut: 1000,
             centerY: false,
-	    timeout: 3000,
+	    timeout: 5000,
             showOverlay: false
         },
         blockUIOptions: {
@@ -40,10 +40,16 @@
             $.unblockUI();
             $('.floating-message').click();
             if (data.success) {
-                $.gritter.add($.extend(
-                    options.notifyOptions,
-                    {title: 'Form sent', text: ' '}
-                ));
+                var message = ['<h3 style="text-align: left; margin: 10px">',
+                               'Form Sent</h3>',
+                               '<p>Thanks for your feedback, we\'ll contact ',
+                               'you back shortly.</p>'];
+                $.blockUI(
+                    $.extend(
+                        options.notifyOptions,
+                        {message: message.join("")}
+                    )
+                );
                 form.resetForm();
             } else {
                 var errors, message = [];
