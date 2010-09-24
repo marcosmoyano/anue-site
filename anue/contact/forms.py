@@ -24,7 +24,7 @@ class ContactForm(forms.Form):
         """Build and send the email message."""
         message = """Name: %(name)s\n""" \
                   """Email: %(email)s\n""" \
-                  """Message: \n\n%(message)s.""" % {
+                  """Message:\n    %(message)s""" % {
                       'name': self.cleaned_data['name'],
                       'email': self.cleaned_data['email'],
                       'message': self.cleaned_data['message']
