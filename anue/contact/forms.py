@@ -22,8 +22,15 @@ class ContactForm(forms.Form):
 
     def save(self, fail_silently=False):
         """Build and send the email message."""
+        message = """Name: %(name)s\n""" \
+                  """Email: %(email)s\n""" \
+                  """Message: \n\n%(message)s.""" % {
+                      'name': self.cleaned_data['name'],
+                      'email': self.cleaned_data['email'],
+                      'message': self.cleaned_data['message']
+                  }
         send_mail(fail_silently=False,
                   from_email=self.cleaned_data['email'],
-                  message=self.cleaned_data['message'],
+                  message=message,
                   subject=_('Contact from site'),
                   recipient_list=[admin[1] for admin in settings.ADMINS])
