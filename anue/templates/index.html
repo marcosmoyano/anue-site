@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Anue</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Anue.biz - Beautiful code, beautiful software." />
+    <meta name="keywords" content="python, web development, django" />
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/screen.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/print.css" type="text/css" media="print" />
+    <!--[if lt IE 8]><link rel="stylesheet" href="{{ MEDIA_URL }}css/ie.css" type="text/css" media="screen, projection" /><![endif]-->
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/style.css" type="text/css" media="screen, projection" />
+    <!--[if lt IE 7]><script type="text/javascript" src="{{ MEDIA_URL }}js/unitpngfix.js"></script><![endif]-->
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery-1.4.2.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.scrollTo-1.4.2.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/anue.js"></script>
+  </head>
+  <body>
+    <div id="main" class="clearfix">
+
+      <div id="header">
+        <div id="header-top" class="container clearfix">
+          <div id="header-top-container" class="container">
+            <div class="prepend-1 span-8">
+              <a title="Anue: Beautiful code, beautiful software" href="#main">
+                <img src="{{ MEDIA_URL }}images/logo.png" alt="Anue" id="logo" />
+              </a>
+            </div>
+            <div class="span-15 last">
+              <ul id="social_bookmarks">
+                <li><a href="#"><img src="{{ MEDIA_URL }}images/button-linkedin.png" alt="link with us on linkedin" /></a></li>
+                <li><a href="http://twitter.com/anue.biz"><img src="{{ MEDIA_URL }}images/button-twitter.png" alt="follow us on twitter" /></a></li>
+                <li><a href="#section-contact"><img src="{{ MEDIA_URL }}images/button-contact.png" alt="contact us" /></a></li>
+                <li><a href="#"><img src="{{ MEDIA_URL }}images/button-facebook.png" alt="follow us on facebook" /></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="menu-container">
+          <div class="container clearfix">
+            <ul id="menu">
+              <li><a href="#section-about">About</a></li>
+              <li><a href="#section-services">Services</a></li>
+              <li class="hide"><a href="#section-portfolio">Portfolio</a></li>
+              <li><a href="#section-contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="content">
+
+        <div id="section-about" class="section container clearfix">
+          <div class="span-22 prepend-1 append-1 last">
+            <h2 class="section-title">about</h2>
+          </div>
+          <div class="span-10 prepend-1 append-1">
+            <p>Hello, we are <strong>anue</strong>.</p>
+            <p>
+              We are fans of open standards, python, the web and
+              beautiful code. We provide software solutions that scale
+              and are simple to maintain.
+            </p>
+            <p>
+              We think our software as a piece of art and that's why
+              our development approach aims for KISS (Keeping It
+              Simple, Silly).
+            </p>
+            <p>
+              We provide python and django based applications that
+              help business to achieve success.
+            </p>
+          </div>
+          <div class="span-10 prepend-1 append-1 last">
+            <img src="{{ MEDIA_URL }}images/machine.png" class="machine" alt="Anue powered" />
+          </div>
+        </div>
+
+        <div id="section-services" class="section container clearfix">
+          <div class="span-22 prepend-1 append-1 last">
+            <h2 class="section-title">services</h2>
+          </div>
+          <div class="span-6 prepend-1 append-1 vseparator">
+            <h3>Python/Django</h3>
+            <p>
+              Building and maintaining Web apps should not be a
+              headache. That's why we use Python+Django for our
+              projects.
+            </p>
+            <p>
+              We turn ideas to reality and existing projects to better
+              ones.
+            </p>
+          </div>
+          <div class="span-6 prepend-1 append-1 vseparator">
+            <h3>System administration</h3>
+            <p>
+              We provide ninja sysadmin skills for small/medium/high
+              traffic servers.
+            </p>
+            <p>
+              We know how to setup mailing servers, automate
+              deployments and optimize configurations.
+            </p>
+          </div>
+          <div class="span-6 prepend-1 append-1 last">
+            <h3>Outsourcing</h3>
+            <p>
+              If you need some of our experts in your own existing
+              development team you can ask us for that.
+            </p>
+            <p>
+              Anue developers are great teammates commited to get the
+              job done.
+            </p>
+          </div>
+        </div>
+
+        <div id="section-contact" class="section container clearfix">
+          <div class="span-22 prepend-1 append-1 last">
+            <h2 class="section-title">contact</h2>
+          </div>
+          <div class="span-6 prepend-1 append-1 vseparator">
+            <p>
+              Zarasa 2134 - Piso 53 oficina 230.<br />
+              Rosario, Santa Fe, Argentina.<br />
+              +54 341 34234324<br />
+              info@anue.biz<br />
+              rrhh@anue.biz
+            </p>
+          </div>
+          <div class="span-14 prepend-1 append-1 last">
+            <form method="post" id="contact-form" action=".">
+              {% csrf_token %}
+              <div class="span-7">
+                <label for="id_name">Name</label><br />
+                <input type="text" name="name" id="id_name" value="" /><br />
+                <label for="id_email">Email</label><br />
+                <input type="text" name="email" id="id_email" value="" /><br />
+                <label for="id_honeypot">Honeypot (do not fill)</label><br />
+                <input type="text" name="honeypot" id="id_honeypot" value="" /><br />
+              </div>
+              <div class="span-7 last clearfix">
+                <label for="id_message">&nbsp;</label><br />
+                <textarea name="id_message" id="id_message" rows="80" cols="20"></textarea><br />
+                <input type="submit" name="Send" value="Send" />
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div id="footer-container">
+          <div id="footer" class="container">
+            <div class="span-16 prepend-1 append-1"><p>Copyright 2010 &copy; <a href="index.html">anue</a>. All rights reserved.</p></div>
+            <div class="span-4 prepend-1 append-1 last"><p>Back to <a href="#section-about">heaven</a></p></div>
+          </div>
+        </div>
+
+      </div> <!-- end #content -->
+    </div> <!-- end #main -->
+  </body>
+</html>

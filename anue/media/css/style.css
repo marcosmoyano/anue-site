@@ -1,0 +1,233 @@
+@font-face {
+    font-family:calibri;
+    src:url(../fonts/CALIBRI.TTF);
+}
+
+@font-face {
+    font-family:grandesign;
+    src:url('../fonts/Grandesign Neue Serif.ttf');
+}
+
+html, body {
+    height:100%;
+    width:100%;
+    font-family:calibri, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    color:#fff;
+    font-size:12pt;
+}
+
+body {
+    font-size:100%;
+    background-image:url(../images/bg-top.jpg);
+    background-repeat:no-repeat;
+    background-position:top center;
+    background-color: #0D2235;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color:#fff;
+}
+
+a {
+    color: #cf7b29;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+input[type=text] {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+input[type=text], textarea {
+    background-color:#DBE5EA;
+    color:#54607E;
+    width:240px;
+    height:35px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    behavior:url(border-radius.htc);
+}
+
+input[type=submit]{
+    float: right;
+    background-image:url(../images/bg-form-submit.png);
+    background-repeat:no-repeat;
+    background-position:bottom right;
+    color:#54607E;
+    font-weight:bold;
+    text-transform:uppercase;
+    width:80px;
+    height:35px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    behavior:url(border-radius.htc);
+}
+
+label {
+    font-weight: normal;
+}
+
+textarea {
+    width:260px;
+    height:180px;
+    resize:none;
+}
+
+.center {
+    margin:0 auto;
+}
+
+h2.section-title {
+    font-family:grandesign, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    display:block;
+    padding-left:50px;
+    background-repeat:no-repeat;
+    background-position:center left;
+}
+
+.section {
+    padding-top:130px; /* header + margin */
+    margin-bottom:1024px; /* section separator */
+    height:380px;
+    background-image:url(../images/horizontal-separator.png);
+    background-repeat:repeat-x;
+    background-position:bottom;
+}
+
+.section h3 {
+    color: #72B6DD;
+}
+
+.vseparator {
+    background-image:url(../images/vertical-separator.png);
+    background-repeat:repeat-y;
+    background-position:right;
+    height:280px;
+}
+
+#main {
+    height:100%;
+    width:100%;
+    margin:0;
+    padding:0;
+}
+
+#logo {
+    margin-top: 15px;
+    height: 90px;
+}
+
+#content {
+    background-image:url(../images/bg-bottom.jpg);
+    background-repeat:no-repeat;
+    background-position:bottom center;
+}
+
+#section-about h2.section-title {
+    background-image:url(../images/icon-people.png);
+}
+
+#section-services h2.section-title {
+    background-image:url(../images/icon-tool.png);
+}
+
+#section-contact h2.section-title {
+    background-image:url(../images/icon-mail.png);
+}
+
+#header {
+    width:100%;
+    height:190px;
+    position:fixed;
+    top:0;
+}
+
+#header-top {
+    height:120px;
+}
+
+#header-top-container {
+    height:100px;
+    display:table-cell;
+    vertical-align:middle;
+}
+
+#menu-container {
+    height:70px;
+    background-image:url(../images/bg-transparent.png);
+}
+
+#menu {
+    list-style-type:none;
+    float:right;
+}
+
+#menu li {
+    float:left;
+    margin:15px 10px 0 10px;
+}
+
+#menu li a {
+    width:130px;
+    height:35px;
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+    background-color:#BE312F;
+    color:#fff;
+    text-decoration:none;
+    font-size:20pt;
+    font-family:grandesign, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    behavior:url(border-radius.htc);
+}
+
+#menu li a:hover {
+    background-color:#cf423F;
+}
+
+#social_bookmarks {
+    list-style-type:none;
+    float:right;
+}
+
+#social_bookmarks li {
+    float:left;
+    margin:40px 10px 0 10px;
+}
+
+#social_bookmarks li a {
+    filter:alpha(opacity=50);
+    -moz-opacity:0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+}
+
+#social_bookmarks li a:hover {
+    filter:alpha(opacity=1);
+    -moz-opacity:1;
+    -khtml-opacity:1;
+    opacity:1;
+}
+
+#footer-container {
+    /* margin-top: -1024px; */ /* this should always match section separator */
+    height:70px;
+    background-image:url(../images/bg-transparent.png);
+}
+
+#footer {
+    padding-top: 25px;
+}
+
+#footer p {
+    margin: 0;
+}
