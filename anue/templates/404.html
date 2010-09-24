@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="section-404" class="section container clearfix">
+  <div class="span-22 prepend-1 append-1 last">
+    <h2 class="section-title">Not Found!</h2>
+  </div>
+  <div class="span-10 prepend-1 append-1">
+    <p>
+      Whatever you was looking for is not here! Try our
+      <a href="{% url index %}">home</a>
+    </p>
+  </div>
+  <div class="span-10 prepend-1 append-1 last">
+    <img src="{{ MEDIA_URL }}images/machine.png" class="machine" alt="Anue powered" />
+  </div>
+</div>
+{% endblock %}
