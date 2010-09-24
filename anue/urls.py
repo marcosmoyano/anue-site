@@ -1,5 +1,6 @@
 from django.conf.urls.defaults import *
 from django.conf import settings
+from contact.forms import ContactForm
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
@@ -16,8 +17,9 @@ else:
 urlpatterns += patterns(
     '',
     url(r'^$', 'django.views.generic.simple.direct_to_template',
-        {'template': 'index.html'}, name='index')
-
+        {'template': 'base.html', 'extra_context': {'form': ContactForm()}},
+        name='index'),
+    url(r'^contact/', include('contact.urls')),
 
     # Example:
     # (r'^anue/', include('anue.foo.urls')),

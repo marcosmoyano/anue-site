@@ -1,0 +1,46 @@
+<div id="section-contact" class="section container clearfix">
+  <div class="span-22 prepend-1 append-1 last">
+    <h2 class="section-title">contact</h2>
+  </div>
+  <div class="span-6 prepend-1 append-1 vseparator">
+    <p>
+      Rosario, Santa Fe, Argentina.<br />
+      +54 341 34234324<br />
+      info@anue.biz<br />
+    </p>
+    {% if form.errors %}
+    <h3>Form errors:</h3>
+    {% for field in form %}
+    {% if field.errors %}
+    <ul class="errorlist">
+      <li class="title">{{ field.label }}</li>
+      <ul>
+        {% for error in field.errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+    </ul>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+
+  </div>
+  <div class="span-14 prepend-1 append-1 last">
+    <form method="post" id="contact-form" action="{% url contact %}">
+      {% csrf_token %}
+      <div class="span-7">
+        <label for="id_name">Name</label><br />
+        {{ form.name }}
+        <label for="id_email">Email</label><br />
+        {{ form.email }}
+        <label for="id_honeypot">Honeypot (do not fill)</label><br />
+        {{ form.honeypot }}
+      </div>
+      <div class="span-7 last clearfix">
+        <label for="id_message">&nbsp;</label><br />
+        {{ form.message }}
+        <input type="submit" name="Send" value="Send" />
+      </div>
+    </form>
+  </div>
+</div>

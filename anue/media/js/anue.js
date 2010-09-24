@@ -1,5 +1,6 @@
 var BASE_URI = location.href.replace(/#.*/,''); // local url without hash
 var anue = {};
+
 anue.scroll_to = function(hash) {
     if (hash) {
         try {
@@ -11,6 +12,7 @@ anue.scroll_to = function(hash) {
         } catch(e) {};
     }
 };
+
 anue.adjust_footer = function() {
     var section_height = 510;
     var footer_height = 70;
@@ -19,9 +21,11 @@ anue.adjust_footer = function() {
     var offset = -(default_margin - (inner_height - section_height) + footer_height);
     $('#footer-container').css('margin-top', offset);
 };
+
 anue.adjust_scroll = function() {
     anue.scroll_to(location.href.slice(BASE_URI.length));
 };
+
 $(document).ready(function() {
     anue.adjust_footer();
     $(window).resize(function() {
@@ -33,7 +37,10 @@ $(document).ready(function() {
         var hash = this.href.slice(BASE_URI.length);
         if (uri == BASE_URI && hash) {
             anue.scroll_to(hash);
+            return false;
         }
-        return false;
     });
+    var form = $("#contact-form");
+    form.attr('action', '/contact/ajax/');
+    form.anueForm();
 });

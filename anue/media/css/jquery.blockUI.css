@@ -1,0 +1,20 @@
+div.blockUI.blockOverlay {
+    display: none;
+}
+
+div.blockUI.blockMsg {
+    border: none;
+    padding: 15px;
+    background-color: #000;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    filter:alpha(opacity=80);
+    -moz-opacity:0.8;
+    -khtml-opacity: 0.8;
+    opacity: 0.8;
+    color: #fff;
+}
+
+div.blockUI.blockMsg .blockTitle {
+    font-weight: bold;
+}
