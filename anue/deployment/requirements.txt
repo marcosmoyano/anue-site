@@ -3,3 +3,5 @@ PIL
 django-extensions
 fabric
 werkzeug
+django-compress
+
